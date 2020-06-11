@@ -9,8 +9,19 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-family: "oswald";
-  width: 50%;
+
   margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+header {
+  background-color: red;
+  transform: perspective(25em) rotateX(50deg) translate3D(0, 4em, 12em);
+  height: 200px;
+  /* background: linear-gradient(#000000c7, #000000c7),
+    url(../img/space-1164579_1280.png); */
+  overflow: hidden;
+  text-overflow: clip;
 }
 h1 {
   color: #1a8dda;
@@ -26,9 +37,40 @@ h1 {
   transform: translate(50%, -50%);
   zoom: 2;
   animation: titre;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-delay: 2s;
   opacity: 0;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%) scale(1.5);
+  animation: image;
+  animation-duration: 10s;
+  animation-delay: 6s;
+  opacity: 0;
+  transform: translateZ(30%);
+}
+
+#credits {
+  /* transform: perspective(25em) rotateX(50deg) translate3D(0, 40em, 12em); */
+  transform: perspective(25em) rotateX(50deg) translate3D(0, 0em, 12em);
+
+  animation: defilement;
+  animation-duration: 90s;
+  animation-delay: 2s;
+}
+
+#credits p {
+  color: rgb(255, 196, 0);
+  font-size: 1.1em;
+  line-height: 1.1em;
+  width: 16%;
+  margin: auto;
+  text-align: justify;
+  padding-bottom: 1.5em;
 }
 
 @keyframes titre {
@@ -45,17 +87,31 @@ h1 {
     opacity: 0;
   }
 }
-
-p {
-  color: rgb(255, 196, 0);
-  font-size: 1.1em;
-  line-height: 1.1em;
-  width: 30%;
-  margin: auto;
-  text-align: justify;
-  padding-bottom: 1.5em;
+@keyframes image {
+  0% {
+    opacity: 1;
+    transform: translate(50%, -50%) scale(1.5);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.1);
+  }
 }
 
-#credits {
-  transform: perspective(30em) rotateX(60deg) translate3D(0, 10em, 6em);
+@keyframes defilement {
+  0% {
+    transform: perspective(25em) rotateX(50deg) translate3D(0, 40em, 12em);
+  }
+  35% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(25em) rotateX(50deg) translate3D(0, -14em, 12em);
+  }
 }
