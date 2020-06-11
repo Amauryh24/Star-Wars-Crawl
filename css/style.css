@@ -55,12 +55,11 @@ img {
 }
 
 #credits {
-  /* transform: perspective(25em) rotateX(50deg) translate3D(0, 40em, 12em); */
   transform: perspective(25em) rotateX(50deg) translate3D(0, 0em, 12em);
-
   animation: defilement;
   animation-duration: 90s;
-  animation-delay: 2s;
+  animation-delay: 1s;
+  opacity: 0;
 }
 
 #credits p {
@@ -105,13 +104,14 @@ img {
   0% {
     transform: perspective(25em) rotateX(50deg) translate3D(0, 40em, 12em);
   }
-  35% {
+  33% {
     opacity: 1;
   }
-  45% {
+  43% {
     opacity: 0;
   }
   100% {
-    transform: perspective(25em) rotateX(50deg) translate3D(0, -14em, 12em);
+    transform: perspective(25em) rotateX(50deg) translate3D(0, -24em, 12em);
+    opacity: 0;
   }
 }
