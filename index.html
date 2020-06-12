@@ -15,7 +15,26 @@
     <title>Star Wars</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <ul>
+        <li>
+          <button id="btn-modal">Edit</button>
+        </li>
+        <li>
+          <button id="reload">Reload</button>
+        </li>
+      </ul>
+    </header>
+
+    <section id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Change the Star Wars film's credits</p>
+        <textarea name="area" id="area" placeholder="Edit credits "></textarea>
+        <button id="change">change</button>
+      </div>
+    </section>
     <h1>
       Il y a bien longtemps, dans une galaxie lointaine, très lointaine...
     </h1>
@@ -43,5 +62,6 @@
         galaxie...
       </p>
     </section>
+    <script src="./js/script.js"></script>
   </body>
 </html>
